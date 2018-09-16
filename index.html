@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>KAKAO</title>
+		<style>
+			* {margin:0; padding:0;}
+
+			.Gold {height: 200px;
+					width: 800px;
+					position: absolute;
+					top:400px;
+					left:50%;
+					transform:translateX(-50%);}
+
+			.Gold img {width:100%;}
+			.wrap {position:absolute; left:50%; top:30px; transform:translateX(-50%);}
+			.wrap li {display:inline-block;}
+			.wrap .R {transform:translateY(16px);}
+			.wrap .M {transform:translateY(-10px);}
+			.wrap .C {transform:translateY(-20px);}
+			#gi {width:300px; position: absolute; left:50%; top:330px;
+				transform: translateX(-50%) translateY(-50%) }
+			
+			#musicplayer {width: 45px; position: absolute; left: 50%; top: 498px;
+							transform: translateX(-50%) translateY(-50%)}			
+		</style>
+	</head>
+	<body>
+		<div style="height : 550px; 
+					width: 100%;
+					background: #F4D922; 
+					position: relative;">
+			<ul class="wrap">
+				<li class="R" id="one" onclick="a()" >
+					<img src="ryan.png" width="100px"/>
+				</li>
+				<li class="M" id="two" onclick="b()">
+					<img src="muzi.png" width="70px"/>
+				</li>
+				<li class="P" id="three" onclick="c()">
+					<img src="prodo.png" width="80px"/>
+				</li>
+				<li class="T" id="four" onclick="d()">
+					<img src="tube.png" width="80px"/>
+				</li>
+				<li class="A" id="five" onclick="e()">
+					<img src="apeach.png" width="80px"/>
+				</li>
+				<li class="N" id="six" onclick="f()">
+					<img src="neo.png" width="80px"/>
+				</li>
+				<li class="C" id="seven" onclick="g()">
+					<img src="con2.png" width="42px"/>
+				</li>
+			</ul>										
+		</div>
+		<div style="height : 200px;
+					width: 100%;
+					background: #4E3819;">
+		</div>
+		<div class="Gold">
+			<img src="gold.png"/>
+		</div>		
+		<img src="playB.png" id="musicplayer">
+		<img id="gi" src=""/>
+		<audio id="backMusic">
+			<source src="music.mp3" type="audio/mpeg">
+		</audio>
+		<!-- 역시 정상우 개쩔어 -->
+		<script type="text/javascript">
+			function a(){
+				document.getElementById("gi").setAttribute("src","1.gif");	
+			};
+
+			function b(){
+				document.getElementById("gi").setAttribute("src","2.gif");
+			};
+			function c(){
+				document.getElementById("gi").setAttribute("src","3.gif");
+			};
+			function d(){
+				document.getElementById("gi").setAttribute("src","4.gif");
+			};	
+			function e(){
+				document.getElementById("gi").setAttribute("src","5.gif");
+			};
+			function f(){
+				document.getElementById("gi").setAttribute("src","6.gif");
+			};
+			function g(){
+				document.getElementById("gi").setAttribute("src","7.gif");
+			};
+
+			var toggle = "off";
+
+			musicplayer.onclick = function(){
+					if(toggle == "off"){
+						musicplayer.setAttribute("src","pauseB.png")
+						backMusic.play();
+						toggle = "on";
+					}else {
+						musicplayer.setAttribute("src","playB.png")
+						backMusic.pause();
+						toggle = "off";
+					}
+			}
+
+		</script>
+	</body>
+</html>
